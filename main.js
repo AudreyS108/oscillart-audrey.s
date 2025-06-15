@@ -1,10 +1,35 @@
 const input = document.getElementById("input")
 
+var amplitude = 40; // (random number for now)
+
 //web audio api elements!
 // audio context: making a new object which controls the playing and pausing of the computer's speakers.
 const audioCtx = new AudioContext();
 //gain node controls volume of the sound
 const gainnode = audioCtx.createGain();
+
+//canvas elements
+
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d"); // the "screen" of the canvas where stuff is drawn on
+var width = ctx.canvas.width;
+var height = ctx.canvas.height;
+
+function makewave() {
+    
+}
+
+function line() {
+    // declare amplitude and frequency 
+    // aplitude is at the top of the code main.js
+    frequency = pitch/10000 // pitch is divided by 10000 so giant waves can be shown on screen
+
+    //attempted sin wave challenge
+    y = height/2 + amplitude * Math.sin(2 * Math.PI * frequency * x)
+    ctx.lineTo(x,y);
+    ctx.stroke()
+    x = x + 1
+}
 
 // create oscillator node
 // creating the oscillator from the audiocontext
